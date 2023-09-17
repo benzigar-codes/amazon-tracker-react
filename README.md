@@ -1,38 +1,71 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Amazon Tracker - Next.js Project
+
+"Amazon Tracker" is a Next.js project that allows you to pin and keep track of your favorite Amazon products. With this application, you can easily view and manage your favorite products whenever you want. This README provides an overview of the project and instructions on setting it up.
+
+## Prerequisites
+
+Before you begin, ensure you have the following prerequisites installed on your system:
+
+- Node.js: Download and install Node.js from [nodejs.org](https://nodejs.org/).
 
 ## Getting Started
 
-First, run the development server:
+Follow these steps to set up and run "My Amazon Favorites" on your local machine:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+1. Clone the repository to your local machine:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+   ```bash
+   git clone https://github.com/benzigar-codes/amazon-tracker-react.git
+   ```
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+2. Navigate to the project directory:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+   ```bash
+   cd amazon-tracker-react
+   ```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+3. Install the project dependencies:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+   ```bash
+   npm install
+   ```
 
-## Learn More
+4. Create a `.env.local` file in the project root and add any necessary environment variables. For example, if you need an Amazon API key, add it to this file.
 
-To learn more about Next.js, take a look at the following resources:
+5. Start the development server:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ```bash
+   npm run dev
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+6. Open your web browser and visit [http://localhost:3000](http://localhost:3000) to access the "Amazon Tracker" application.
 
-## Deploy on Vercel
+## Usage
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+With "Amazon Tracker," you can:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- **Pin Your Favorite Products:** Search for products on Amazon and pin your favorites to your profile.
+- **View Your Pinned Products:** Easily access and view your pinned products anytime.
+- **Manage Your Favorites:** Remove products from your favorites list if you no longer wish to track them.
+
+## Contributing
+
+If you'd like to contribute to this project, please follow these guidelines:
+
+1. Fork the repository on GitHub.
+2. Create a new branch with a descriptive name.
+3. Make your changes and commit them with clear and concise messages.
+4. Push your changes to your fork on GitHub.
+5. Create a pull request to merge your changes into the main repository.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- This project is built with [Next.js](https://nextjs.org/) and [React](https://reactjs.org/).
+- Amazon product information is retrieved using web scraping techniques.
+- We appreciate your interest and hope you enjoy using "Amazon Tracker"
+
+Happy pinning and managing your Amazon favorites! 🌟
