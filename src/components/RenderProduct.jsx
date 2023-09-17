@@ -2,6 +2,7 @@ import useUser from "@/utils/useUser";
 import useUtils from "@/utils/useUtils";
 import Link from "next/link";
 import React from "react";
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import { BsCheck, BsFillPinFill } from "react-icons/bs";
 import { MdStar } from "react-icons/md";
 
@@ -11,18 +12,21 @@ export default function RenderProduct({
 }) {
   const { formatMoney, trimText, executeFunction } = useUtils();
   const [pinnedStatus, setPinnedStatus] = React.useState(null);
+  const [pinLoading, setPinLoading] = React.useState(false);
   const { user, setUser } = useUser();
 
   const pinProduct = async () => {
+    setPinLoading(true);
     const sendData = {
       action: "pinProduct",
       productId: each?.$id,
       pinStatus: !pinnedStatus,
     };
-    setPinnedStatus(!pinnedStatus);
     try {
       const data = await executeFunction(sendData);
     } catch (err) {}
+    setPinnedStatus(!pinnedStatus);
+    setPinLoading(false);
     onPinStatusChange();
   };
 
@@ -73,7 +77,20 @@ export default function RenderProduct({
         </div>
       </div>
       <div className="p-2 flex flex-col">
-        {pinnedStatus === true ? (
+        {pinLoading === true ? (
+          <div className="w-full flex flex-col">
+            <button
+              onClick={() => {
+                if (window.confirm("Do you want to unpin this ? "))
+                  pinProduct();
+              }}
+              className="flex items-center justify-center py-1 rounded-md mt-2 dark:bg-zinc-900 dark:text-white bg-zinc-200 text-black"
+            >
+              <AiOutlineLoading3Quarters className="mr-2 animate-spin text-sm" />
+              <p>Loading...</p>
+            </button>
+          </div>
+        ) : pinnedStatus === true ? (
           <div className="w-full flex flex-col">
             <button
               onClick={() => {

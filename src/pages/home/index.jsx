@@ -167,7 +167,10 @@ export default function Home() {
                     ? [...suggestedProducts]
                     : []),
                 ]?.map((each) => (
-                  <div className="w-full lg:w-1/4 flex p-2 lg:p-0">
+                  <div
+                    key={each.$id}
+                    className="w-full lg:w-1/4 flex p-2 lg:p-0"
+                  >
                     <RenderProduct
                       onPinStatusChange={() => {
                         fetchPinnedProducts();
@@ -209,7 +212,7 @@ export default function Home() {
       {pinnedProducts?.length > 0 ? (
         <div className="mt-5 flex flex-wrap">
           {pinnedProducts?.map((each) => (
-            <div className="w-full lg:w-1/4 flex p-2 lg:p-0">
+            <div key={each.$id} className="w-full lg:w-1/4 flex p-2 lg:p-0">
               <RenderProduct
                 onPinStatusChange={() => {
                   fetchPinnedProducts();
